@@ -9,6 +9,9 @@
     <Lottie
       path='japanese'
     />
+    <Lottie
+      path='pan'
+    />
   </div>
 </template>
 

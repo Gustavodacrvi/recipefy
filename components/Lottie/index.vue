@@ -13,6 +13,7 @@ const animations: any = [
   'chicken',
   'wine',
   'japanese',
+  'pan',
 ].reduce((obj, key) => ({...obj, [key]: () => import(/* webpackChunkName: "animation" */ `@/assets/animations/${key}.json`)}), {})
 
 export default Vue.extend({
