@@ -1,5 +1,11 @@
 <template>
-  <div class="Nav flex-centralize">
+  <div class="Nav flex-centralize" :class="{notHome: !isHome}">
+    <div class="background parallax"></div>
+    <ToggleLottie class="back"
+      width="100%"
+      path='backClip'
+      :isActive='isHome'
+    />
     <div class="wrapper">
       <div class="side logo">
         <span>Recipefy</span>
@@ -28,10 +34,12 @@
 import Vue from 'vue'
 
 import El from "./El.vue"
+import ToggleLottie from "@/components/Lottie/ToggleLottie.vue"
 
 export default Vue.extend({
   components: {
     El,
+    ToggleLottie,
   },
   data() {
     return {
@@ -70,10 +78,13 @@ export default Vue.extend({
         this.height = el.offsetHeight + 'px'
       }
     },
-  },
+  } as any,
   computed: {
     activeRoute() {
       return this.$route.path
+    },
+    isHome() {
+      return this.activeRoute === '/'
     },
   },
   watch: {
@@ -92,6 +103,7 @@ export default Vue.extend({
   margin: 0 80px
   flex-basis: 1200px
   margin-top: 40px
+  transition-duration: .2s
 
   .side
     flex-basis: 25%
@@ -99,6 +111,13 @@ export default Vue.extend({
   .middle
     position: relative
     flex-basis: 50%
+
+.notHome
+  .wrapper
+    margin-top: 26px
+
+  .back
+    top: 88px
 
 .logo
   font-family: "Open Sans Bold"
@@ -112,5 +131,19 @@ export default Vue.extend({
   position: absolute
   height: 100%
   transition-duration: .2s
+
+.back, .background
+  position: absolute
+  width: 100%
+  z-index: -1
+
+.back
+  top: 118px
+  left: 0px
+  transition-duration: .2s
+
+.background
+  height: 800px
+  background-image: url('~assets/svg/backHome.svg')
 
 </style>

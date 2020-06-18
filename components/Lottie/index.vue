@@ -14,6 +14,7 @@ const animations: any = [
   'wine',
   'japanese',
   'pan',
+  'backClip',
 ].reduce((obj, key) => ({...obj, [key]: () => import(/* webpackChunkName: "animation" */ `@/assets/animations/${key}.json`)}), {})
 
 export default Vue.extend({
@@ -56,6 +57,9 @@ export default Vue.extend({
     },
     stop() {
       lottie.play(this.name)
+    },
+    setDirection(num: -1 | 1) {
+      lottie.setDirection(num, this.name)
     },
     destroy() {
       lottie.play(this.name)

@@ -1,0 +1,47 @@
+<template>
+  <Lottie class="back"
+    v-bind="$attrs"
+
+    path='backClip'
+    :autoplay='false'
+    :loop='false'
+    ref='lottie'
+  />
+</template>
+
+<script lang="ts">
+
+import Vue from 'vue'
+
+import Lottie from './index.vue'
+
+export default Vue.extend({
+  props: ['isActive'],
+  components: {
+    Lottie,
+  },
+  methods: {
+    toggleOn() {
+      this.lottie.setDirection(-1)
+      this.lottie.play()
+    },
+    toggleOff() {
+      this.lottie.setDirection(1)
+      this.lottie.play()
+    },
+  } as any,
+  computed: {
+    lottie() {
+      return this.$refs.lottie
+    },
+  },
+  watch: {
+    isActive(active) {
+      if (active)
+        return this.toggleOn()
+      return this.toggleOff()
+    },
+  },
+})
+
+</script>
