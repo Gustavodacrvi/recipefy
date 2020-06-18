@@ -1,6 +1,6 @@
 <template>
   <div class="Lottie"
-    :style="{width, height}"
+    :style="{width}"
   ></div>
 </template>
 
@@ -11,6 +11,8 @@ import lottie from 'lottie-web'
 
 const animations: any = [
   'chicken',
+  'wine',
+  'japanese',
 ].reduce((obj, key) => ({...obj, [key]: () => import(/* webpackChunkName: "animation" */ `@/assets/animations/${key}.json`)}), {})
 
 export default Vue.extend({
@@ -21,13 +23,12 @@ export default Vue.extend({
     },
     width: {
       type: String,
-      default: '175px',
-    },
-    height: {
-      type: String,
-      default: '175px',
+      default: '100px',
     },
     name: {
+      type: String,
+    },
+    container: {
       type: String,
     },
   },
@@ -39,10 +40,12 @@ export default Vue.extend({
   },
   methods: {
     async load() {
+      if (!animations[this.path])
+        throw `${this.path} animation doesnt exit`
       lottie.loadAnimation({
-        container: this.$el,
         renderer: 'svg',
         ...this.$attrs as any,
+        container: this.getContainer,
         name: this.name,
         animationData: (await animations[this.path]()).default,
       })
@@ -55,6 +58,17 @@ export default Vue.extend({
     },
     destroy() {
       lottie.play(this.name)
+    },
+  },
+  computed: {
+    getContainer(): HTMLElement {
+      if (this.container) {
+        const target = document.getElementById(this.container)
+        if (!target)
+          throw `${this.container} target container not found`
+        return target as any
+      }
+      return this.$el as any
     },
   },
   watch: {

@@ -3,6 +3,12 @@
     <Lottie
       path='chicken'
     />
+    <Lottie
+      path='wine'
+    />
+    <Lottie
+      path='japanese'
+    />
   </div>
 </template>
 
