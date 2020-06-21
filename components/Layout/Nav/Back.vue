@@ -130,7 +130,7 @@ export default Vue.extend({
   transition-duration: .2s
 
 .notActive
-  height: 175px !important
+  height: 165px !important
 
 .content
   position: absolute

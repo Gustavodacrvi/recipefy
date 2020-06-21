@@ -34,6 +34,11 @@ export default Vue.extend({
       type: String,
     },
   },
+  data() {
+    return {
+      item: null as any,
+    }
+  },
   async mounted() {
     this.load()
   },
@@ -43,14 +48,15 @@ export default Vue.extend({
   methods: {
     async load() {
       if (!animations[this.path])
-        throw `${this.path} animation doesnt exit`
-      lottie.loadAnimation({
+        throw `${this.path} animation doesn't exit`
+      this.item = lottie.loadAnimation({
         renderer: 'svg',
         ...this.$attrs as any,
         container: this.getContainer,
         name: this.name,
         animationData: (await animations[this.path]()).default,
       })
+      this.$emit('loaded', this.item)
     },
     play() {
       lottie.play(this.name)
@@ -63,6 +69,9 @@ export default Vue.extend({
     },
     destroy() {
       lottie.play(this.name)
+    },
+    getDuration(): any {
+      return this.item ? this.item.getDuration(true) : null
     },
   },
   computed: {

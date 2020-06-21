@@ -6,6 +6,7 @@
     :autoplay='false'
     :loop='false'
     ref='lottie'
+    @loaded='firstActivation'
   />
 </template>
 
@@ -20,7 +21,25 @@ export default Vue.extend({
   components: {
     Lottie,
   },
+  data() {
+    return {
+      lastFrame: null,
+      item: null,
+    }
+  },
   methods: {
+    firstActivation(item: any) {
+      this.item = item
+      this.lastFrame = this.lottie.getDuration()
+      if (!this.isActive) {
+        item.goToAndStop(this.lastFrame, true)
+      }
+    },
+    activate() {
+      if (this.isActive)
+        return this.toggleOn()
+      return this.toggleOff()
+    },
     toggleOn() {
       this.lottie.setDirection(-1)
       this.lottie.play()
@@ -36,10 +55,8 @@ export default Vue.extend({
     },
   },
   watch: {
-    isActive(active) {
-      if (active)
-        return this.toggleOn()
-      return this.toggleOff()
+    isActive() {
+      this.activate()
     },
   },
 })
