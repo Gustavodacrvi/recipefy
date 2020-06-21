@@ -26,6 +26,8 @@
 
   --txt-color: #434343
   --back-color: #F3F3F3
+  --green: #A1C181
+  --light-green: #ACCB8D
 
 body
   margin: 0
@@ -51,7 +53,7 @@ a
   border-top-left-radius: 28px
   border-bottom-right-radius: 28px
 
-.fade-enter-active, .fade-leave-active
+.fade-enter-active, .transform-enter-active, .fade-leave-active, .transform-leave-active
   transition-duration: .2s
   transition-timing-function: ease-in-out
 
@@ -60,3 +62,9 @@ a
 
 .fade-leave, .fade-enter-to
   opacity: 1
+
+.transform-enter, .transform-leave-to
+  transform: scale(0,0)
+
+.transform-leave, .transform-enter-to
+  transform: scale(1,1)

@@ -6,16 +6,43 @@
       :isActive='active'
       ref='lottie'
     />
-    <transition name="fade">
-      <div v-if="active && finalToHomeTransition"
-        class="content"
-        :style="{height}"
-      >
-        <div class="animations-wrapper">
-
-        </div>
+    <div
+      class="content"
+      :style="{height: height + 'px'}"
+    >
+      <div class="animations-wrapper">
+        <transition-group name='transform'>
+          <Animation v-if="active && finalToHomeTransition"
+            key='1'
+            :width='ratio(338)'
+            :left="ratio(1230)"
+            :top="ratio(24)"
+            path='pan'
+          />
+          <Animation v-if="active && finalToHomeTransition"
+            key='2'
+            :width='ratio(200)'
+            :left="ratio(850)"
+            :top="ratio(420)"
+            path='japanese'
+          />
+          <Animation v-if="active && finalToHomeTransition"
+            key='3'
+            :width='ratio(280)'
+            :left="ratio(1144)"
+            :top="ratio(462)"
+            path='chicken'
+          />
+          <Animation v-if="active && finalToHomeTransition"
+            key='4'
+            :width='ratio(220)'
+            :left="ratio(1557)"
+            :top="ratio(556)"
+            path='wine'
+          />
+        </transition-group>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
@@ -24,6 +51,7 @@
 import Vue from 'vue'
 
 import ToggleLottie from "@/components/Lottie/ToggleLottie.vue"
+import Animation from "./Animation.vue"
 
 let timeout: any = null
 
@@ -31,6 +59,7 @@ export default Vue.extend({
   props: ['active'],
   components: {
     ToggleLottie,
+    Animation,
   },
   mounted() {
     this.calc()
@@ -41,11 +70,15 @@ export default Vue.extend({
   },
   data() {
     return {
-      height: '900px',
+      height: 900,
+      width: 1920,
       finalToHomeTransition: this.active,
     }
   },
   methods: {
+    ratio(oldNum: number): string {
+      return ((oldNum * this.width) / 1920) + 'px'
+    },
     listener() {
       if (timeout) {
         clearTimeout(timeout)
@@ -58,7 +91,8 @@ export default Vue.extend({
       setTimeout(() => {
         const comp = this.$refs.lottie as Vue
         if (comp) {
-          this.height = comp.$el.getBoundingClientRect().height + 'px'
+          this.height = comp.$el.getBoundingClientRect().height
+          this.width = window.innerWidth
         }
       }, 150)
     },
@@ -68,7 +102,7 @@ export default Vue.extend({
       if (!this.active)
         this.finalToHomeTransition = false
       else
-        setTimeout(() => this.finalToHomeTransition = true, 350)
+        setTimeout(() => this.finalToHomeTransition = true, 250)
     },
   },
 })
@@ -102,14 +136,21 @@ export default Vue.extend({
   position: absolute
   bottom: 0
   transform: translateY(12px)
-  background-color: red
-  z-index: -2
   width: 100%
 
 .animations-wrapper
   position: relative
   height: 100%
   width: 100%
+
+.to-mask
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  background-image: url('~assets/svg/backHome.svg')
+  height: 810px
+
 
 @media (min-width: 1500px)
   .background
