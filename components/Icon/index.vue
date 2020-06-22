@@ -23,7 +23,7 @@ export default {
     async load() {
       this.component = null
       try {
-        this.component = (await import(`./${this.icon}.vue`)).default
+        this.component = (await import(`./icons/${this.icon}.vue`)).default
       } catch (err) {
         throw err
       }

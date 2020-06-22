@@ -36,6 +36,8 @@
   --dark-red: #FE3A3A
   --yellow: #E5EF54
 
+  --faded-gray: #E5E5E5
+
 body
   margin: 0
 
@@ -44,9 +46,13 @@ body, input, textarea, button
   color: var(--txt-color)
   background-color: var(--back-color)
 
-.parallax
+.parallax, .parallax-svg
   background-attachment: fixed
   background-size: cover
+
+.parallax-svg
+  background-image: url('~assets/svg/back.svg')
+  background-repeat: no-repeat
 
 a
   color: var(--blue)
