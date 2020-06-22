@@ -3,13 +3,21 @@
     <div class="wrapper">
       {{ isVisible }}
       {{ title }}
+      <Icon
+        :icon='icon'
+      />
     </div>
   </div>
 </template>
 
 <script>
 
+import Icon from '@/components/Icon/index.vue'
+
 export default {
+  components: {
+    Icon,
+  },
   props: ['icon', 'title', 'animationName', 'content', 'color'],
   data() {
     return {
