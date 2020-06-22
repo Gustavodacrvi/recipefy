@@ -5,6 +5,7 @@
       path='backClip'
       :isActive='active'
       ref='lottie'
+      @loaded='calc'
     />
     <div
       class="content"

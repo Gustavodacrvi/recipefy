@@ -1,69 +1,60 @@
 <template>
   <div class="container">
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
-    <p>asdfasdf</p>
+    <Header/>
+    <FilterAnimations/>
+
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
+    <p>asdf asdf asdf asdf asdf asdf </p>
   </div>
 </template>
 
@@ -71,9 +62,21 @@
 
 import Vue from 'vue'
 
-export default Vue.extend({
+import Header from '@/components/Pages/index/Header.vue'
+import FilterAnimations from '@/components/Pages/index/FilterAnimations/index.vue'
 
+export default Vue.extend({
+  components: {
+    Header,
+    FilterAnimations,
+  },
 })
 
 </script>
 
+<style lang="sass" scoped>
+
+.landing-page-section
+  margin-top: 100px
+
+</style>

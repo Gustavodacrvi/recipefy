@@ -29,6 +29,13 @@
   --green: #A1C181
   --light-green: #ACCB8D
 
+  --orange: #FF944D
+  --purple: #706AFF
+  --light-purple: #C088FF
+  --red: #FF4D4D
+  --dark-red: #FE3A3A
+  --yellow: #E5EF54
+
 body
   margin: 0
 
@@ -48,10 +55,34 @@ a
   display: flex
   justify-content: center
 
-.card-radius
+h1
+  color: var(--main)
+  font-family: "Quicksand Bold"
+  font-size: 45px
+
+// CSS COMPONENTS
+
+.card-radius, .button
   border-radius: 8px
   border-top-left-radius: 28px
   border-bottom-right-radius: 28px
+
+.button
+  background-color: var(--main)
+  color: white
+  padding: 16px 34px
+  font-family: "Open Sans Bold"
+  filter: brightness(1)
+  transform: translate(0,0)
+  transition-duration: .2s
+  transition-timing-function: ease-in-out
+  font-size: 18px
+
+  &:hover
+    transform: translate(0,-4px)
+    filter: brightness(1.2)
+
+// VUE CSS TRANSITIONS
 
 .fade-enter-active, .transform-enter-active, .fade-leave-active, .transform-leave-active
   transition-duration: .2s
@@ -68,3 +99,13 @@ a
 
 .transform-leave, .transform-enter-to
   transform: scale(1,1)
+
+.page-enter, .page-leave-to
+  transition: opacity .25s, transform .25s
+  opacity: 0
+  transform: translateY(-30px)
+
+.page-leave, .page-enter-to
+  transition: opacity .25s, transform .25s
+  opacity: 1
+  transform: translateY(0px)

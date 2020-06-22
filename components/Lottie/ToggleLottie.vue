@@ -29,6 +29,7 @@ export default Vue.extend({
   },
   methods: {
     firstActivation(item: any) {
+      this.$emit('loaded', item)
       this.item = item
       this.lastFrame = this.lottie.getDuration()
       if (!this.isActive) {

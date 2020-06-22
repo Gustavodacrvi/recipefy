@@ -1,6 +1,8 @@
 <template>
   <div class="Nav flex-centralize" :class="{notHome: !isHome}">
-    <Back :active="isHome"/>
+    <Back
+      :active="isHome"
+    />
     <div class="wrapper">
       <div class="side logo">
         <span>Recipefy</span>
@@ -63,6 +65,9 @@ export default Vue.extend({
   },
   mounted() {
     this.setWidth()
+    setTimeout(() => {
+      this.setWidth()
+    }, 70)
   },
   methods: {
     setWidth() {
