@@ -45,6 +45,5 @@ export default Vue.extend({
 
 .wrapper
   position: relative
-  height: 100%
 
 </style>
