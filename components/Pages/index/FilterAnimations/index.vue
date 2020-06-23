@@ -34,19 +34,11 @@
         :right='true'
       />
       <Card
-        title='Meal Types'
-        color='var(--yellow)'
-        icon='meal-types'
-        animationName='plates'
-        content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-      />
-      <Card
         title='Ingredients'
         color='var(--dark-red)'
         icon='ingredients'
         animationName='ingredients'
         content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-        :right='true'
       />
       <Card
         title='Equipment'
@@ -54,6 +46,7 @@
         icon='equipment'
         animationName='fire'
         content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        :right='true'
       />
 
     </div>
