@@ -12,6 +12,7 @@ import lottie from 'lottie-web'
 const animations: any = [
   'chicken',
   'wine',
+  'peso',
   'japanese',
   'pan',
   'backClip',
@@ -61,6 +62,15 @@ export default Vue.extend({
     play() {
       lottie.play(this.name)
     },
+    goForward(isFirstTime = false) {
+      if (!isFirstTime)
+        this.setDirection(1)
+      this.play()
+    },
+    goBack() {
+      this.setDirection(-1)
+      this.play()
+    },
     stop() {
       lottie.play(this.name)
     },
@@ -72,6 +82,15 @@ export default Vue.extend({
     },
     getDuration(): any {
       return this.item ? this.item.getDuration(true) : null
+    },
+    toggleOn(reverseDirection = true) {
+      if (reverseDirection)
+        this.setDirection(-1)
+      this.play()
+    },
+    toggleOff() {
+      this.setDirection(1)
+      this.play()
     },
   },
   computed: {

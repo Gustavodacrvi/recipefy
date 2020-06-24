@@ -9,6 +9,8 @@
         icon='diets'
         animationName='peso'
         content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        :isActive='active === 0'
+        @set-visibility='num => active = 0'
       />
       <Card
         title='Cuisines'
@@ -17,6 +19,9 @@
         animationName='globe'
         content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
         :right='true'
+        :num='1'
+        :isActive='active === 1'
+        @set-visibility='num => active = 1'
       />
       <Card
         title='Intolerances'
@@ -24,6 +29,9 @@
         icon='intolerances'
         animationName='milk'
         content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        :num='2'
+        :isActive='active === 2'
+        @set-visibility='num => active = 2'
       />
       <Card
         title='Meal Types'
@@ -32,6 +40,9 @@
         animationName='plates'
         content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
         :right='true'
+        :num='3'
+        :isActive='active === 3'
+        @set-visibility='num => active = 3'
       />
       <Card
         title='Ingredients'
@@ -39,6 +50,9 @@
         icon='ingredients'
         animationName='ingredients'
         content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        :num='4'
+        :isActive='active === 4'
+        @set-visibility='num => active = 4'
       />
       <Card
         title='Equipment'
@@ -47,6 +61,9 @@
         animationName='fire'
         content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
         :right='true'
+        :num='5'
+        :isActive='active === 5'
+        @set-visibility='num => active = 5'
       />
 
     </div>
@@ -60,6 +77,11 @@ import Card from "./Card.vue"
 export default {
   components: {
     Card,
+  },
+  data() {
+    return {
+      active: undefined,
+    }
   },
 }
 

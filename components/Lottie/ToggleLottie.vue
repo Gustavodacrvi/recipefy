@@ -38,16 +38,8 @@ export default Vue.extend({
     },
     activate() {
       if (this.isActive)
-        return this.toggleOn()
-      return this.toggleOff()
-    },
-    toggleOn() {
-      this.lottie.setDirection(-1)
-      this.lottie.play()
-    },
-    toggleOff() {
-      this.lottie.setDirection(1)
-      this.lottie.play()
+        return this.lottie.toggleOn()
+      return this.lottie.toggleOff()
     },
   } as any,
   computed: {
