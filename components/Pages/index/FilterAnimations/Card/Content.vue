@@ -38,7 +38,7 @@
 
 <script>
 
-import Icon from '@/components/Icon/index.vue'
+import Icon from '@/components/Ui/Icon/index.vue'
 
 export default {
   props: ['icon', 'title', 'visible', 'content', 'color', 'right'],

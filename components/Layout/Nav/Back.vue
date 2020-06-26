@@ -51,7 +51,7 @@
 
 import Vue from 'vue'
 
-import ToggleLottie from "@/components/Lottie/ToggleLottie.vue"
+import ToggleLottie from "@/components/Ui/Lottie/ToggleLottie.vue"
 import Animation from "./Animation.vue"
 
 let timeout: any = null

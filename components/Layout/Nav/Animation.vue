@@ -19,7 +19,7 @@
 
 import Vue from 'vue'
 
-import Lottie from '@/components/Lottie/index.vue'
+import Lottie from '@/components/Ui/Lottie/index.vue'
 
 export default Vue.extend({
   components: {

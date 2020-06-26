@@ -1,7 +1,7 @@
 <template>
   <div class="FilterAnimations flex-centralize landing-page-section">
     <div class="wrapper">
-      <h1>All you'll ever need</h1>
+      <h2>All you'll ever need</h2>
 
       <Card
         title='Diets'
@@ -101,9 +101,6 @@ export default {
 
 .wrapper
   flex-basis: 1200px
-
-  h1
-    text-align: center
 
 .left, .right
   display: flex
