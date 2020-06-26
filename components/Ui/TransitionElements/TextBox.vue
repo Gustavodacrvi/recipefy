@@ -1,11 +1,12 @@
 <template>
-  <span class="TextBox" :style="{height}">{{ value }}</span>
+  <span v-if="!html" class="TextBox" :style="{height}">{{ value }}</span>
+  <span v-else class="TextBox" :style="{height}" v-html="value"></span>
 </template>
 
 <script>
 
 export default {
-  props: ['value'],
+  props: ['value', 'html'],
   data() {
     return {
       str: this.value,
