@@ -73,6 +73,7 @@ export default {
 
 h3
   font-family: "Quicksand Bold"
+  color: var(--main)
 
 .dishes
   margin: 24px 40px
