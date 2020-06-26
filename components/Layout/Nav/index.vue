@@ -67,7 +67,7 @@ export default Vue.extend({
     this.setWidth()
     setTimeout(() => {
       this.setWidth()
-    }, 70)
+    }, 100)
   },
   methods: {
     setWidth() {

@@ -1,10 +1,10 @@
 <template>
-  <div class="Animation" :class="{visible, right, run}">
+  <div class="Animation" :class="{visible, run}">
     <div class="wrapper">
       <div class="content">
-        <Lottie class="lottie"
+        <Lottie class="lottie" :style="{left}"
           :autoplay='false'
-          width='700px'
+          :width='width + "px"'
           :path='animationName'
           :loop='false'
           ref='lottie'
@@ -23,7 +23,7 @@ export default {
   components: {
     Lottie,
   },
-  props: ['animationName', 'run', 'visible', 'right'],
+  props: ['animationName', 'run', 'visible', 'width', 'autoTranslate', 'left'],
   data() {
     return {
       item: null,
@@ -64,10 +64,12 @@ export default {
   height: 240px
   transform: translateX(-300px)
 
-.wrapper
-  height: 0
+.content, .wrapper
   border-top-right-radius: 30px
   border-bottom-right-radius: 30px
+
+.wrapper
+  height: 0
   width: 100%
   transition: height .05s ease-in-out .35s
   background-color: var(--dark-green)
@@ -83,14 +85,6 @@ export default {
   overflow: hidden
   transition-delay: 0
 
-.right
-  transform: translateX(300px) !important
-
-  .wrapper
-    border-radius: 0
-    border-top-left-radius: 30px
-    border-bottom-left-radius: 30px
-
 .lottie
   transform: translateX(-150px)
 
@@ -103,11 +97,10 @@ export default {
     transition: height .35s ease-in-out .35s
 
     .content
-      height: 300px
-      transform: translateY(-60px)
+      height: 240px
       transition-delay: .35s
 
-.right.visible
-  transform: translateX(60px) !important
+// .autoTranslate .lottie
+//   transform: translateX(20px) !important
 
 </style>

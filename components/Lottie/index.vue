@@ -16,6 +16,12 @@ const animations: any = [
   'japanese',
   'pan',
   'backClip',
+  'fire',
+  'globe',
+  'ingredients',
+  'milk',
+  'plates',
+  'wine',
 ].reduce((obj, key) => ({...obj, [key]: () => import(/* webpackChunkName: "animation" */ `@/assets/animations/${key}.json`)}), {})
 
 export default Vue.extend({
@@ -27,9 +33,6 @@ export default Vue.extend({
     width: {
       type: String,
       default: '100px',
-    },
-    name: {
-      type: String,
     },
     container: {
       type: String,
@@ -54,13 +57,13 @@ export default Vue.extend({
         renderer: 'svg',
         ...this.$attrs as any,
         container: this.getContainer,
-        name: this.name,
+        name: this.path,
         animationData: (await animations[this.path]()).default,
       })
       this.$emit('loaded', this.item)
     },
     play() {
-      lottie.play(this.name)
+      lottie.play(this.path)
     },
     goForward(isFirstTime = false) {
       if (!isFirstTime)
@@ -72,13 +75,13 @@ export default Vue.extend({
       this.play()
     },
     stop() {
-      lottie.play(this.name)
+      lottie.play(this.path)
     },
     setDirection(num: -1 | 1) {
-      lottie.setDirection(num, this.name)
+      this.item.setDirection(num, this.path)
     },
     destroy() {
-      lottie.play(this.name)
+      lottie.play(this.path)
     },
     getDuration(): any {
       return this.item ? this.item.getDuration(true) : null
@@ -113,6 +116,9 @@ export default Vue.extend({
 
 </script>
 
-<style>
+<style lang='sass' scoped>
+
+.Lottie
+  position: relative
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="CardContent">
-    <div class="wrapper" :class="{visible}">
+    <div class="wrapper" :class="{visible, right}">
       <div class="color-wrapp"
         :style="{backgroundColor: color}"
       >
@@ -41,7 +41,7 @@
 import Icon from '@/components/Icon/index.vue'
 
 export default {
-  props: ['icon', 'title', 'visible', 'content', 'color'],
+  props: ['icon', 'title', 'visible', 'content', 'color', 'right'],
   components: {
     Icon,
   },
@@ -93,6 +93,12 @@ export default {
   position: relative
   overflow: hidden
   transition-delay: .3s
+
+.right
+  transform: translateX(240px)
+
+.right.visible
+  transform: translateX(0px)
 
 .color-wrapp
   position: absolute

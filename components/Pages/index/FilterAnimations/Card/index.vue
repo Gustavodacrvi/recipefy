@@ -1,17 +1,11 @@
 <template>
   <div class="Card LandingPageCard" :class="{right}">
-    <Animation v-if="right"
-      :visible="isActive"
-      :right='right'
-      :run='run'
-      :animationName="animationName"
+    <Content v-bind="$props"
+      :visible='isActive'
     />
-    <Content v-bind="$props" :visible='isActive'/>
-    <Animation v-if="!right"
+    <Animation v-bind="$props"
       :visible="isActive"
-      :right='right'
       :run='run'
-      :animationName="animationName"
     />
   </div>
 </template>
@@ -26,7 +20,7 @@ export default {
     Content,
     Animation,
   },
-  props: ['icon', 'title', 'animationName', 'content', 'color', 'left', 'right',, 'isActive'],
+  props: ['icon', 'title', 'animationName', 'content', 'color', 'right',, 'isActive', 'width', 'left'],
   data() {
     return {
       timeout: null,
