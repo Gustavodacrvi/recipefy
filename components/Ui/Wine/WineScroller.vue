@@ -6,23 +6,21 @@
       />
 
       <Scroller
+        :class="{hasDescription: selectedItem.description}"
         :list='res.productMatches'
         v-slot='{item}'
       >
-        <div class="wine-wrapper round-card">
-          <div
-            class="wine-img"
-            :style="{
-              backgroundImage: `url(${item.imageUrl})`,
-            }"
-          ></div>
-          <div
-            class="wine-title"
-          >
-            {{ item.title }}
-          </div>
+        <div class="wine-wrapper" @click="selected = item.id">
+          <Wine
+            v-bind="item"
+            :active="selected === item.id"
+          />
         </div>
       </Scroller>
+
+      <TextBox
+        :value="selectedItem.description || ''"
+      />
 
     </div>
   </div>
@@ -35,10 +33,13 @@ import { WinePairingResponse } from "@/interfaces/index.ts"
 import TextBox from "@/components/Ui/TransitionElements/TextBox.vue"
 import Scroller from "@/components/Ui/Scroller.vue"
 
+import Wine from './Wine.vue'
+
 export default {
   components: {
     TextBox,
     Scroller,
+    Wine,
   },
   props: ['res'],
   data() {
@@ -46,43 +47,41 @@ export default {
       selected: this.res.productMatches[0].id,
     }
   },
+  computed: {
+    selectedItem() {
+      return this.res.productMatches.find(el => el.id === this.selected)
+    },
+  },
 }
 
 </script>
 
 <style lang='sass' scoped>
 
+.wine-wrapper
+  margin: 0 35px
+  flex: 0 0 200px
+
 .WineScoller
   color: white
   background-color: var(--purple)
-  border-radius: 75px
-  border-top-right-radius: 250px
-  border-bottom-left-radius: 250px
+  border-radius: 50px
+  border-top-right-radius: 185px
+  border-bottom-left-radius: 185px
 
 .wrapper
+  position: relative
   padding: 48px 0
   flex-basis: 950px
+  max-width: 950px
 
 .Scroller
   margin-top: 40px
+  bottom: 0
+  transition-duration: .2s
+  transition-timing-function: ease-in-out
 
-.wine-wrapper
-  flex-basis: 300px
-  padding: 24px
-  margin: 0 35px
-  background-color: white
-  color: var(--txt-color)
-
-.wine-img
-  background-size: contain
-  background-position: center
-  background-repeat: no-repeat
-  height: 150px
-
-.wine-title
-  margin-top: 24px
-  font-family: "Quicksand Bold"
-  font-size: 18px
-  text-align: center
+.hasDescription
+  margin-bottom: 45px
 
 </style>
