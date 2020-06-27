@@ -3,9 +3,9 @@
     class="ImgComp"
     :class="{active}"
   >
-    <div class="color white"></div>
-    <div class="color purple"></div>
-    <div class="wrapper">
+    <div class="color white round-card"></div>
+    <div class="color purple round-card"></div>
+    <div class="wrapper round-card">
       <Display
         v-bind="$attrs"
         :active='active'
@@ -28,11 +28,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-
-.wrapper, .color
-  border-radius: 10px
-  border-top-right-radius: 30px
-  border-bottom-left-radius: 30px
 
 .color
   transform: translate(0px, 0px)

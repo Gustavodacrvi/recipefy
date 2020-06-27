@@ -30,7 +30,7 @@ export default {
     ],
     "pairingText": "Merlot, Cabernet Sauvignon, and Pinot Noir are my top picks for Steak. After all, beef and red wine are a classic combination. Generally, leaner steaks go well with light or medium-bodied reds, such as pinot noir or merlot, while fattier steaks can handle a bold red, such as cabernet sauvingnon. The Sterling Vineyards Merlot with a 5 out of 5 star rating seems like a good match. It costs about 29 dollars per bottle.",
     "productMatches": [
-        {
+/*         {
             "id": 428278,
             "title": "Sterling Vineyards Merlot",
             "averageRating": 1.0,
@@ -40,7 +40,7 @@ export default {
             "price": "$28.99",
             "ratingCount": 1.0,
             "score": 0.75
-        },
+        }, */
         {
             "id": 9,
             "title": "Sterling Vineyards Merlot",

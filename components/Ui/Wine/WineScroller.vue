@@ -4,13 +4,23 @@
       <TextBox
         :value="res.pairingText || ''"
       />
-      
+
       <Scroller
         :list='res.productMatches'
         v-slot='{item}'
       >
-        <div>
-          {{ item.title }}
+        <div class="wine-wrapper round-card">
+          <div
+            class="wine-img"
+            :style="{
+              backgroundImage: `url(${item.imageUrl})`,
+            }"
+          ></div>
+          <div
+            class="wine-title"
+          >
+            {{ item.title }}
+          </div>
         </div>
       </Scroller>
 
@@ -45,12 +55,34 @@ export default {
 .WineScoller
   color: white
   background-color: var(--purple)
-  border-radius: 100px
-  border-top-right-radius: 500px
-  border-bottom-left-radius: 500px
+  border-radius: 75px
+  border-top-right-radius: 250px
+  border-bottom-left-radius: 250px
 
 .wrapper
-  padding: 40px 0
+  padding: 48px 0
   flex-basis: 950px
+
+.Scroller
+  margin-top: 40px
+
+.wine-wrapper
+  flex-basis: 300px
+  padding: 24px
+  margin: 0 35px
+  background-color: white
+  color: var(--txt-color)
+
+.wine-img
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+  height: 150px
+
+.wine-title
+  margin-top: 24px
+  font-family: "Quicksand Bold"
+  font-size: 18px
+  text-align: center
 
 </style>

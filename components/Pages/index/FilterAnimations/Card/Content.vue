@@ -125,7 +125,7 @@ export default {
   p
     font-size: 20px
     line-height: 33px
-    font-family: "Open Sans Semibold"
+    font-family: "Quicksand"
     margin: 0
 
 .tag
@@ -135,7 +135,7 @@ export default {
   .label
     font-size: 30px
     margin-left: 30px
-    font-family: "Open Sans Bold"
+    font-family: "Quicksand Bold"
 
   .Icon
     transform: translateY(3px)
@@ -159,7 +159,7 @@ export default {
     .label
       font-size: 25px
       margin-left: 14px
-      font-family: "Open Sans Bold"
+      font-family: "Quicksand Bold"
 
     .Icon
       margin-left: 0

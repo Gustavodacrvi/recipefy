@@ -38,7 +38,7 @@ p
   color: white
   font-size: 22px
   line-height: 35px
-  font-family: "Open Sans Bold"
+  font-family: "Quicksand Bold"
 
 a
   text-decoration: none

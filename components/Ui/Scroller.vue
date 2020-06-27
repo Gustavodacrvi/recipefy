@@ -9,7 +9,18 @@
 <script>
 
 export default {
-  props: ['list'],
+  props: {
+    list: {
+      default: () => [],
+    },
+  },
 }
 
 </script>
+
+<style lang='sass' scoped>
+
+.Scroller
+  display: flex !important
+
+</style>

@@ -47,10 +47,11 @@ export default {
 
   span
     display: inline-block
-    font-family: "Open Sans Bold"
+    font-family: "Quicksand Bold"
 
 .Display
   position: relative
+  text-align: center
 
   .img
     width: 100%

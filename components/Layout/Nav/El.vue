@@ -23,7 +23,7 @@ export default Vue.extend({
   padding: 8px 26px
   z-index: 2
   font-size: 17px
-  font-family: "Open Sans Bold"
+  font-family: "Quicksand Bold"
   transform: scale(1,1)
   transition-duration: .2s
 

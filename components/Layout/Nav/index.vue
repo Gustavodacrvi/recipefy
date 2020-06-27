@@ -116,7 +116,7 @@ export default Vue.extend({
   margin-top: 26px
 
 .logo
-  font-family: "Open Sans Bold"
+  font-family: "Quicksand Bold"
   font-size: 25px
   color: var(--main)
 

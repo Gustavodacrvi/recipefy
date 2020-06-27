@@ -4,11 +4,11 @@
   src: url('./../fonts/OpenSans-Regular.ttf')
 
 @font-face
-  font-family: "Open Sans Semibold"
+  font-family: "Quicksand"
   src: url('./../fonts/OpenSans-Semibold.ttf')
 
 @font-face
-  font-family: "Open Sans Bold"
+  font-family: "Quicksand Bold"
   src: url('./../fonts/OpenSans-Bold.ttf')
 
 @font-face
@@ -42,9 +42,13 @@
 body
   margin: 0
 
+
+
 body, input, textarea, button
-  font-family: "Open Sans"
+  font-family: "Quicksand Bold"
   color: var(--txt-color)
+
+body
   background-color: var(--back-color)
 
 .parallax, .parallax-svg
@@ -78,7 +82,7 @@ h1, h2
   background-color: var(--main)
   color: white
   padding: 16px 34px
-  font-family: "Open Sans Bold"
+  font-family: "Quicksand Bold"
   filter: brightness(1)
   transform: translate(0,0)
   transition-duration: .2s
@@ -88,6 +92,11 @@ h1, h2
   &:hover
     transform: translate(0,-4px)
     filter: brightness(1.2)
+
+.round-card
+  border-radius: 10px
+  border-top-right-radius: 30px
+  border-bottom-left-radius: 30px
 
 // VUE CSS TRANSITIONS
 
