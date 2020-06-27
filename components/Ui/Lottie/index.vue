@@ -21,6 +21,7 @@ const animations: any = [
   'ingredients',
   'milk',
   'plates',
+  'gear',
   'wine',
 ].reduce((obj, key) => ({...obj, [key]: () => import(/* webpackChunkName: "animation" */ `@/assets/animations/${key}.json`)}), {})
 

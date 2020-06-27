@@ -41,39 +41,6 @@ export default {
             "ratingCount": 1.0,
             "score": 0.75
         },
-        {
-            "id": 428278,
-            "title": "Sterling 55555555555555555",
-            "averageRating": 1.0,
-            "description": `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of `,
-            "imageUrl": "https://spoonacular.com/productImages/428278-312x231.jpg",
-            "link": "https://www.amazon.com/2014-Sterling-Vineyards-Valley-Merlot/dp/B071FP8NPG?tag=spoonacular-20",
-            "price": "$28.99",
-            "ratingCount": 1.0,
-            "score": 0.75
-        },
-        {
-            "id": 428278,
-            "title": "Sterling 55555555555555555",
-            "averageRating": 1.0,
-            "description": `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of `,
-            "imageUrl": "https://spoonacular.com/productImages/428278-312x231.jpg",
-            "link": "https://www.amazon.com/2014-Sterling-Vineyards-Valley-Merlot/dp/B071FP8NPG?tag=spoonacular-20",
-            "price": "$28.99",
-            "ratingCount": 1.0,
-            "score": 0.75
-        },
-        {
-            "id": 428278,
-            "title": "Sterling 55555555555555555",
-            "averageRating": 1.0,
-            "description": `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of `,
-            "imageUrl": "https://spoonacular.com/productImages/428278-312x231.jpg",
-            "link": "https://www.amazon.com/2014-Sterling-Vineyards-Valley-Merlot/dp/B071FP8NPG?tag=spoonacular-20",
-            "price": "$28.99",
-            "ratingCount": 1.0,
-            "score": 0.75
-        },
     ]
 },
     }
