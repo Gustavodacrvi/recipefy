@@ -1,5 +1,5 @@
 <template>
-  <div class="WineSelection">
+  <div class="WineSelection landing-page-section">
     <h2>Wine Pairing</h2>
 
     <DishSelection

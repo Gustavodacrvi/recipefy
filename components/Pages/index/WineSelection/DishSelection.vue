@@ -66,7 +66,7 @@ export default {
 .wrapper
   padding: 26px
   color: white
-  font-family: "Quicksand"
+  font-family: "Open Sans Semibold"
   flex-basis: 900px
   border-top-left-radius: 50px
   border-top-right-radius: 150px

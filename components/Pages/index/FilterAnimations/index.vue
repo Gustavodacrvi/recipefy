@@ -1,5 +1,5 @@
 <template>
-  <div class="FilterAnimations flex-centralize landing-page-section">
+  <div class="FilterAnimations landing-page-section flex-centralize landing-page-section">
     <div class="wrapper">
       <h2>All you'll ever need</h2>
 

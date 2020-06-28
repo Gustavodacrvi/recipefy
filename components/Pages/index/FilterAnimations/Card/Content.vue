@@ -125,7 +125,7 @@ export default {
   p
     font-size: 20px
     line-height: 33px
-    font-family: "Quicksand"
+    font-family: "Open Sans"
     margin: 0
 
 .tag

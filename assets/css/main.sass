@@ -4,16 +4,12 @@
   src: url('./../fonts/OpenSans-Regular.ttf')
 
 @font-face
-  font-family: "Quicksand"
+  font-family: "Opan Sans Semibold"
   src: url('./../fonts/OpenSans-Semibold.ttf')
 
 @font-face
-  font-family: "Quicksand Bold"
+  font-family: "Open Sans Bold"
   src: url('./../fonts/OpenSans-Bold.ttf')
-
-@font-face
-  font-family: "Quicksand"
-  src: url('./../fonts/Quicksand-Regular.otf')
 
 @font-face
   font-family: "Quicksand Bold"
@@ -45,15 +41,18 @@ body
 
 
 body, input, textarea, button
-  font-family: "Quicksand Bold"
+  font-family: "Open Sans"
   color: var(--txt-color)
 
 body
   background-color: var(--back-color)
 
-.parallax, .parallax-svg
+.parallax, .parallax-center, .parallax-svg
   background-attachment: fixed
   background-size: cover
+
+.parallax-center
+  background-position: center
 
 .parallax-svg
   background-image: url('~assets/svg/back.svg')
