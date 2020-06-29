@@ -10,12 +10,12 @@
         <div>
           <ListWrapper
             style="transform: translateX(-65px)"
-            :value='[1, 3, 5, 9, 10, 12, 15]'
-            :isCompleted='isCompleted'
+
+            :value='list'
             title='Ingredients'
             v-slot="{ item }"
           >
-            <span>{{ item }}</span>
+            <Ingredient v-bind="item" @click="toggleItem"/>
           </ListWrapper>
         </div>
       </div>
@@ -28,16 +28,63 @@
 
 import Header from './Header.vue'
 import ListWrapper from "@/components/Ui/Lists/ListWrapper/index.vue"
+import Ingredient from "@/components/Ui/Lists/ListWrapper/Ingredient.vue"
+import mixin from "@/components/Ui/Lists/ListWrapper/mixin.js"
 
 export default {
+  mixins: [mixin('landing-page-ingredients')],
   components: {
     Header,
     ListWrapper,
+    Ingredient,
   },
-  methods: {
-    isCompleted(num) {
-      return num % 2 === 0
-    },
+  data() {
+    return {
+      list: [
+        {
+          id: 1041009,
+          name: "Grated cheese (I used romano)",
+          unit: "tbsp",
+          amount: 2,
+        },
+        {
+          id: 104100,
+          name: "Grated cheese (I used romano)",
+          unit: "tbsp",
+          amount: 2,
+        },
+        {
+          id: 104103,
+          name: "Grated cheese (I used romano)",
+          unit: "tbsp",
+          amount: 2,
+        },
+        {
+          id: 105103,
+          name: "Grated cheese (I used romano)",
+          unit: "tbsp",
+          amount: 2,
+        },
+        {
+          id: 305103,
+          name: "Grated cheese (I used romano)",
+          unit: "tbsp",
+          amount: 2,
+        },
+        {
+          id: 305303,
+          name: "Grated cheese (I used romano)",
+          unit: "tbsp",
+          amount: 2,
+        },
+        {
+          id: 303,
+          name: "Grated cheese (I used romano)",
+          unit: "tbsp",
+          amount: 2,
+        },
+      ]
+    }
   },
 }
 

@@ -2,7 +2,7 @@
   <Lottie class="back"
     v-bind="$attrs"
 
-    path='backClip'
+    :path='path'
     :autoplay='false'
     :loop='false'
     ref='lottie'
@@ -17,7 +17,7 @@ import Vue from 'vue'
 import Lottie from './index.vue'
 
 export default Vue.extend({
-  props: ['isActive'],
+  props: ['isActive', 'path'],
   components: {
     Lottie,
   },

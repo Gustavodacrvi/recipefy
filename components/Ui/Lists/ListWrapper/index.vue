@@ -18,12 +18,12 @@ export default {
   components: {
     Header,
   },
-  props: ['value', 'isCompleted', 'title'],
+  props: ['value', 'title'],
   computed: {
     getNumber() {
       if (this.value.length === 0)
         return 0
-      return this.value.reduce((tot, item) => this.isCompleted(item) ? tot + 1 : tot, 0) / this.value.length
+      return this.value.reduce((tot, item) => item.completed ? tot + 1 : tot, 0) / this.value.length
     },
   },
 }

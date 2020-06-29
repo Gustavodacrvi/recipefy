@@ -21,6 +21,7 @@ const animations: any = [
   'ingredients',
   'milk',
   'plates',
+  'circle-checkmark',
   'gear',
   'wine',
 ].reduce((obj, key) => ({...obj, [key]: () => import(/* webpackChunkName: "animation" */ `@/assets/animations/${key}.json`)}), {})
@@ -37,6 +38,9 @@ export default Vue.extend({
     },
     container: {
       type: String,
+    },
+    id: {
+      type: Number,
     },
   },
   data() {
@@ -58,13 +62,13 @@ export default Vue.extend({
         renderer: 'svg',
         ...this.$attrs as any,
         container: this.getContainer,
-        name: this.path,
+        name: this.getId,
         animationData: (await animations[this.path]()).default,
       })
       this.$emit('loaded', this.item)
     },
     play() {
-      lottie.play(this.path)
+      lottie.play(this.getId)
     },
     goForward(isFirstTime = false) {
       if (!isFirstTime)
@@ -76,13 +80,14 @@ export default Vue.extend({
       this.play()
     },
     stop() {
-      lottie.play(this.path)
+      lottie.play(this.getId)
     },
     setDirection(num: -1 | 1) {
-      this.item.setDirection(num, this.path)
+      if (this.item)
+        this.item.setDirection(num, this.getId)
     },
     destroy() {
-      lottie.play(this.path)
+      lottie.play(this.getId)
     },
     getDuration(): any {
       return this.item ? this.item.getDuration(true) : null
@@ -98,6 +103,9 @@ export default Vue.extend({
     },
   },
   computed: {
+    getId() {
+      return this.id || this.path
+    },
     getContainer(): HTMLElement {
       if (this.container) {
         const target = document.getElementById(this.container)
